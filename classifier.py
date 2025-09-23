@@ -1,6 +1,5 @@
 import os
 import pickle
-
 from skimage.io import imread
 from skimage.transform import resize
 import numpy as np
@@ -13,7 +12,8 @@ from sklearn.metrics import accuracy_score
 # Prepare Data
 
 input_dir = '/Users/jnoael/Desktop/%codes/PythonProjects/BananaClassifier/training_data'
-categories = os.listdir(input_dir)
+categories = [f for f in os.listdir(input_dir) if os.path.isdir(os.path.join(input_dir, f))] #isdir specification to avoid .DS_Store being labeled as file path
+print(f"Categories labeled as: {categories}")
 
 data, labels = [], []
 for category_index, category in enumerate(categories):

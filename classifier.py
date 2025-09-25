@@ -1,5 +1,6 @@
 import os
 import pickle
+import torch
 from skimage.io import imread
 from skimage.transform import resize
 import numpy as np
